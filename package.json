@@ -1,0 +1,21 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "playwright install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@executeautomation/playwright-mcp-server": "^1.0.3",
+    "@playwright/test": "^1.52.0",
+    "playwright-core": "^1.52.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.52.0"
+  }
+}
