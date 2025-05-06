@@ -1,10 +1,22 @@
-Không cần cài đặt thêm gì, đã cài đặt đầy đủ, allow tất cả mcp tools, hãy:
+No additional installation is required; everything is already installed. Allow all MCP tools, not use file code, then:
 
-Follow 7 steps using BrowserType is WebKit:
-1. Navigated to the alp8.nexdev.net website
+Follow 7 steps using BrowserType is Chromium:
+1. Navigated to the alp8.nexdev.net website, get timestamp và - 4h và lưu lại để làm mốc TransTime
 2. Check console, nếu có console log là v2.1.3 thì thành công
-3. Fill in the txtusername field with "sutest01"
+3. Fill in the txtUserName field with "sutest01"
 4. Click the verify button to proceed to the next step
-5. Fill in the txtpassword field with "1234aa"
+5. Fill in the txtPassWord field with "1234aa"
 6. Click the final login button to complete authentication
 7. Checked login success - this was confirmed! I can see the account is logged in successfully as "SUTEST01"
+8. Call the API https://spu-fps-int-api.nexdev.net/api/TransactionValidateSuccess/{loginName}/{transTime}
+with transTime being the **exact timestamp when the flow started in step 1**.
+
+9. Check the response from the API. If there is no result, wait 10 seconds and retry up to 3 times.
+10. Once a result is returned, interpret it as a successful login.
+
+
+8. Clicked on Member Information in the left menu
+9. Selected Agent List from the expanded menu
+10. Found data in the grid including username SUPERTEST910001
+11. Successfully clicked on the username SUPERTEST910001
+12. The page has loaded, showing records associated with this agent
