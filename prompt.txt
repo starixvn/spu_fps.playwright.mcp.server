@@ -1,22 +1,23 @@
-No additional installation is required; everything is already installed. Allow all MCP tools, not use file code, then:
+Execute full Feature Login athena with mcp server
 
-Follow 7 steps using BrowserType is Chromium:
-1. Navigated to the alp8.nexdev.net website, get timestamp và - 4h và lưu lại để làm mốc TransTime
-2. Check console, nếu có console log là v2.1.3 thì thành công
-3. Fill in the txtUserName field with "sutest01"
-4. Click the verify button to proceed to the next step
-5. Fill in the txtPassWord field with "1234aa"
-6. Click the final login button to complete authentication
-7. Checked login success - this was confirmed! I can see the account is logged in successfully as "SUTEST01"
-8. Call the API https://spu-fps-int-api.nexdev.net/api/TransactionValidateSuccess/{loginName}/{transTime}
-with transTime being the **exact timestamp when the flow started in step 1**.
+Execute full feature: Login with MCP server using 3 different browsers
 
-9. Check the response from the API. If there is no result, wait 10 seconds and retry up to 3 times.
-10. Once a result is returned, interpret it as a successful login.
+Browser version on:
+- mcp-playwright:
+ + webkit-2140
+ + chromium-1161
+ + firefox-1475
+
+- playwright on nodejs:
+ + webkit-2158
+ + chromium-1169
+ + firefox-1482
 
 
-8. Clicked on Member Information in the left menu
-9. Selected Agent List from the expanded menu
-10. Found data in the grid including username SUPERTEST910001
-11. Successfully clicked on the username SUPERTEST910001
-12. The page has loaded, showing records associated with this agent
+ $env:BROWSER_TYPE="firefox"; npm test
+
+ $env:BROWSER_TYPE='chromium'; npx playwright test; $env:BROWSER_TYPE='firefox'; npx playwright test; $env:BROWSER_TYPE='webkit'; npx playwright test
+
+ $env:TEST_USERNAME="test10y"; $env:BROWSER_TYPE="firefox"; npx playwright test tests/login_alpha.test.ts
+
+ sử dụng mcp server msplaywright tạo lại file test dựa theo scenario và profile vừa thực hiện.
